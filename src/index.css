@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  background: #d2d2d2;
+}
+
+.header {
+  background: #dd3;
+}
+
+.order {
+  background: green;
+}
+
+.inventory {
+  background: red;
+}
+
+.adminPanel {
+  background: #000;
+}
