@@ -15,9 +15,8 @@ describe('App tests', () => {
         ReactDOM.unmountComponentAtNode(div);
     })
 
-    it ('Hello world renders', () =>{
+    it ('Snapshot watches', () =>{
         const wrapper = shallow(<AdminPanel/>);
-        // console.log(wrapper.debug());
-        expect(wrapper.find('div').text()).toBe('Admin Panel')
+        expect(wrapper).toMatchSnapshot();
     })
 })

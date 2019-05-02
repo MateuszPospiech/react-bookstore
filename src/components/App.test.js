@@ -23,4 +23,9 @@ describe('App tests', () => {
         expect(wrapper.find('Inventory').exists()).toBe(true);
         expect(wrapper.find('AdminPanel').exists()).toBe(true);
     })
+
+    it ('Snapshot watches', () =>{
+        const wrapper = shallow(<App/>);
+        expect(wrapper).toMatchSnapshot();
+    })
 })

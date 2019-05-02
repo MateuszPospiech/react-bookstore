@@ -18,6 +18,22 @@ describe('App tests', () => {
     it ('Hello world renders', () =>{
         const wrapper = shallow(<Header/>);
         // console.log(wrapper.debug());
-        expect(wrapper.find('div').text()).toBe('Header')
+        expect(wrapper.find('div').text()).toBe('My Books');
+        wrapper.setState({
+            bookstoreName : "Your Books"
+        });
+        expect(wrapper.find('div').text()).toBe('Your Books');
+    })
+
+    it('Header state changes after clicking on header div', () => {
+        const wrapper = shallow(<Header/>);
+        expect(wrapper.state().bookstoreName).toBe('My Books');
+        wrapper.find('.header').simulate('click');
+        expect(wrapper.state().bookstoreName).toBe('Your Books');
+    })
+
+    it ('Snapshot watches', () =>{
+        const wrapper = shallow(<Header/>);
+        expect(wrapper).toMatchSnapshot();
     })
 })

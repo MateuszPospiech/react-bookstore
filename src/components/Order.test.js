@@ -20,4 +20,9 @@ describe('App tests', () => {
         // console.log(wrapper.debug());
         expect(wrapper.find('div').text()).toBe('Zamówienie')
     })
+
+    it ('Snapshot watches', () =>{
+        const wrapper = shallow(<Order/>);
+        expect(wrapper).toMatchSnapshot();
+    })
 })
