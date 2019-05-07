@@ -11,9 +11,8 @@ class AdminPanel extends React.Component {
                 description: "",
                 onStock: false,
                 image: ""
-            },
-            books : []
-        }
+            }
+        };
     };
 
     handleChange = (event) => {
@@ -42,14 +41,11 @@ class AdminPanel extends React.Component {
 
         event.preventDefault(); //do not reload 
 
-        let newBooks = [...this.state.books]; //split all books into book copy of all books
-
         let newBook = {...this.state.book}; //split book into propertys copy of all propertys
 
-        newBooks.push(newBook);
+        this.props.addBook(newBook);
 
         this.setState({
-            books : newBooks,
             book : {
                 name : "",
                 author: "",
